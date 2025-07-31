@@ -1,6 +1,6 @@
 import express from 'express';
 import axios from 'axios';
-import nodemailer from nodemailer;
+import nodemailer from 'nodemailer';
 import cron from 'node-cron';
 import cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
