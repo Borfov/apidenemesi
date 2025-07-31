@@ -2,7 +2,15 @@
 import nodemailer from 'nodemailer';
 import cron from 'node-cron';
 import puppeteer from 'puppeteer';
+import express from 'express';
+const app = express();
+const PORT = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+  res.send('API çalışıyor!');
+});
+
+app.listen(PORT, () => console.log(`Sunucu ${PORT} portunda çalışıyor`));
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
