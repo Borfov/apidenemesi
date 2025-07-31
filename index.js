@@ -27,9 +27,11 @@ const mailOptions = {
 
 async function stokontrol() {
   const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
+  headless: true,
+  executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome-stable',
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+});
+
 
   const url = "https://www.gsstore.org/galatasaray-5-yildiz-klasik-logo-polo-t-shirt-e251403-7/";
 
