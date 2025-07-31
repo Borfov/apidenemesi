@@ -2,7 +2,9 @@
   "name": "benim-api",
   "version": "1.0.0",
   "main": "index.js",
+  
   "scripts": {
+    "type": "module",
     "postinstall": "puppeteer install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
