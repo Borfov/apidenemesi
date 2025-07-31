@@ -4,10 +4,6 @@ import cron from 'node-cron';
 import puppeteer from 'puppeteer';
 
 
-
-
-
-
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -15,7 +11,7 @@ const transporter = nodemailer.createTransport({
     pass: 'bswq hbjt kxpa coug'
   }
 });
-
+//                                       Mail tanımlama ve ayarlama bölümü.
 const mailOptions = {
   from: 'akcanboray@gmail.com',
   to: 'borayakcann@gmail.com',
@@ -25,18 +21,21 @@ const mailOptions = {
 };
 
 
+
+
+
+
 async function stokontrol() {
   const browser = await puppeteer.launch({
   headless: true,
-  executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome-stable',
   args: ['--no-sandbox', '--disable-setuid-sandbox']
 });
-
+                                                     //  Stok kontrolü fonksiyonu
 
   const url = "https://www.gsstore.org/galatasaray-5-yildiz-klasik-logo-polo-t-shirt-e251403-7/";
 
   try {
-    
+    const page = await browser.newPage();
     await page.goto(url, { waitUntil: "domcontentloaded" });
 
     const inStock = await page.evaluate(() => {
@@ -60,10 +59,15 @@ async function stokontrol() {
 
 
 
+
+
+
+
+
 cron.schedule("0 12 * * *",async () =>{
   console.log("Calısıyo");
   await stokontrol();
-  
+   //                                     Node-cron ile oluşturulan zamanlayıcı.
 });
 
 stokontrol();
