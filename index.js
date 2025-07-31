@@ -1,4 +1,4 @@
-import express from 'express';
+
 import axios from 'axios';
 import nodemailer from 'nodemailer';
 import cron from 'node-cron';
@@ -7,23 +7,12 @@ import puppeteer from 'puppeteer';
 
 const browser = await puppeteer.launch({
   headless: true,
-  executablePath: '/usr/bin/chromium-browser',
-  args: ['--no-sandbox', '--disable-setuid-sandbox']
+  executablePath: '/usr/bin/google-chrome', // veya '/usr/bin/chromium-browser'
+  args: ['--no-sandbox', '--disable-setuid-sandbox'],
 });
 
 
-const PORT = 3001;
-app.use(express.json());
-app.get('/', (req, res) => {
-  res.send('API çalışıyor!');
-});
-app.listen(PORT, () => {
-  console.log(`Sunucu http://localhost:${PORT} adresinde çalışıyor.`);
-});
-app.post('/test', (req, res) => {
-  console.log(req.body); 
-  res.json({ message: 'Veri alındı', data: req.body });
-});
+
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
