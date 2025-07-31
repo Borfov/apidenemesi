@@ -6,6 +6,21 @@ const cron=require('node-cron');
 const cheerio=require('cheerio');
 const puppeteer = require('puppeteer')
 
+const browser = await puppeteer.launch({
+  headless: true,
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--no-first-run',
+    '--no-zygote',
+    '--single-process',
+    '--disable-gpu'
+  ]
+});
+
+
 const PORT = 3001;
 app.use(express.json());
 app.get('/', (req, res) => {
