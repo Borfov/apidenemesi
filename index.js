@@ -3,11 +3,7 @@ import nodemailer from 'nodemailer';
 import cron from 'node-cron';
 import puppeteer from 'puppeteer';
 
-const browser = await puppeteer.launch({
-  headless: true,
-  executablePath: '/usr/bin/google-chrome', // veya '/usr/bin/chromium-browser'
-  args: ['--no-sandbox', '--disable-setuid-sandbox'],
-});
+
 
 
 
@@ -30,8 +26,10 @@ const mailOptions = {
 
 
 async function stokontrol() {
-  const browser = await puppeteer.launch({ headless: true });
-  const page = await browser.newPage();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
 
   const url = "https://www.gsstore.org/galatasaray-5-yildiz-klasik-logo-polo-t-shirt-e251403-7/";
 
