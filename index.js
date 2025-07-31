@@ -67,7 +67,7 @@ async function stokontrol() {
 
 
 
-cron.schedule("*/5 * * * *",async () =>{
+cron.schedule("0 12 * * *",async () =>{
   console.log("Calısıyo");
   await stokontrol();
   
