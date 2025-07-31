@@ -2,21 +2,16 @@
   "name": "benim-api",
   "version": "1.0.0",
   "main": "index.js",
-  "type":"module",
-  "devDependencies": {
-    "dependencies": {
-    
+  "type": "module",
+  "dependencies": {
     "puppeteer": "24.15.0",
     "nodemailer": "7.0.5",
     "cheerio": "1.1.2",
     "node-cron": "4.2.1"
-}
-  }
-  ,
+  },
   "scripts": {
-    "postinstall": "puppeteer install", 
+    "postinstall": "puppeteer install",
     "test": "echo \"Error: no test specified\" && exit 1"
-    
   },
   "repository": {
     "type": "git",
