@@ -53,10 +53,11 @@ async function stokontrol() {
     console.log(`[${new Date().toLocaleTimeString()}] Stok durumu:`, inStock ? "STOKTA VAR" : " Yok");
 
     
-    if (inStock==false) {
+    if (inStock) {
       await transporter.sendMail(mailOptions);
       console.log("Mail yollandı");
     }
+    
   } catch (error) {
     console.error("Hata oluştu:", error.message);
   } finally {
