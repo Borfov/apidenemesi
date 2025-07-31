@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer';
 import express from 'express';
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+console.log(puppeteer.executablePath());
 app.get('/', (req, res) => {
   res.send('API çalışıyor!');
 });
