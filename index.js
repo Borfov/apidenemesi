@@ -1,10 +1,9 @@
-const express = require('express');
-const app = express();
-const axios = require('axios');
-const nodemailer=require('nodemailer');
-const cron=require('node-cron');
-const cheerio=require('cheerio');
-const puppeteer = require('puppeteer')
+import express from 'express';
+import axios from 'axios';
+import nodemailer from nodemailer;
+import cron from 'node-cron';
+import cheerio from 'cheerio';
+import puppeteer from 'puppeteer';
 
 const browser = await puppeteer.launch({
   headless: true,
