@@ -15,14 +15,14 @@ app.listen(PORT, () => console.log(`Sunucu ${PORT} portunda çalışıyor`));
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'akcanboray@gmail.com',
-    pass: 'bswq hbjt kxpa coug'
+    user: 'aaaaaaaaaa@gmail.com',
+    pass: " "
   }
 });
 //                                       Mail tanımlama ve ayarlama bölümü.
 const mailOptions = {
-  from: 'akcanboray@gmail.com',
-  to: 'borayakcann@gmail.com',
+  from: 'aaaaaaaaaaa@gmail.com',
+  to: 'xxxxxxxxxxx@gmail.com',
   
   subject: "Gs Store'daki Bordo Polo Yaka 🟥🟨🟥🟨🟥🟨",
   text: 'Stoğu yokmuş \nhttps://www.gsstore.org/galatasaray-5-yildiz-klasik-logo-polo-t-shirt-e251403-7/'
